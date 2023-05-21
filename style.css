@@ -1,0 +1,334 @@
+/* THIS IS universal selector */
+/* Selects every single element on the page and this is useful if we want certain property applied to all elements but does not get inherited .This selector has the lowest priority*/
+
+* {
+  /* border-top: 10px solid #059db7; */
+
+  /*Below two properties to remove the default properties of the page in terms of margin and padding--->This is called GLOBAL RESET*/
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /*THis is to remove the default behaviour of box model*/
+}
+
+body {
+  color: #444;
+  font-family: sans-serif;
+  border-top: 10px solid #059db7;
+  position: relative;
+}
+
+nav {
+  font-size: 18px;
+}
+
+article {
+  /* margin-bottom: 60px; */
+}
+
+aside {
+  background-color: #f7f7f7;
+  border-top: 5px solid #059db7;
+  border-bottom: 5px solid #059db7;
+
+  /* padding-top: 50px;
+  padding-bottom: 50px; */
+
+  /*shorthand of above two properties :
+     the left value is topandBottom and the right value is leftandright*/
+  padding: 50px 0;
+  width: 500px;
+}
+
+.main-header {
+  background-color: #f7f7f7;
+  /* padding: 20px;
+  padding-left: 40px;
+  padding-right: 40px; */
+  /*Shorthand propert of padding*/
+  padding: 20px 40px;
+  margin-bottom: 60px; /*recommended to use the margin bottom to provide verticle spacing.
+  /* height: 80px; */
+}
+.post-header {
+  margin-bottom: 40px;
+}
+
+.container {
+  width: 800px; /*part1 of centering our page*/
+
+  /*Below is part 2 of centering our page*/
+  /* margin-left: auto;
+  margin-right: auto; */
+
+  /*shorthand*/
+  /*marginatTopAndBottom   LeftAndRight*/
+  margin: 0 auto;
+}
+
+h1,
+h2,
+h3 {
+  color: #059db7;
+}
+
+h1 {
+  font-size: 26px;
+  text-transform: uppercase;
+  font-style: italic;
+}
+
+h2 {
+  font-size: 40px;
+  margin-bottom: 30px;
+  /* background-color: orangered; */
+  position: relative;
+}
+h3 {
+  font-size: 30px;
+  margin-bottom: 20px;
+  margin-top: 40px;
+}
+h4 {
+  font-size: 20px;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+p {
+  font-size: 22px;
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+/*THis(below) property is required to get back the bulletpoints and numbers which were lost from left side due to global reset*/
+ul,
+ol {
+  /* margin-left: 50px; */
+  margin-bottom: 20px;
+}
+
+li {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+button {
+  font-size: 22px;
+  padding: 20px;
+  cursor: pointer; /*TO get the hand pointer when hovered on button */
+  position: absolute;
+  /* top: 50px;
+  left: 50px; */
+  bottom: 50px;
+  right: 50px;
+}
+
+/* footer p {
+  font-size: 16px;
+} */
+#copyright {
+  font-size: 16px;
+}
+
+/* article header p {
+  font-style: italic;
+} */
+
+#author {
+  font-style: italic;
+  font-size: 18px;
+}
+
+.related-author {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.related {
+  list-style: none;
+}
+
+/* body {
+  background-color: rgba(255, 0, 0, 0.102);
+} */
+
+/* .first-li {
+  font-weight: bold;
+} */
+
+/*These are called as pseudo classes ,pseudo class contains colon : */
+li:first-child {
+  font-weight: bold;
+}
+
+li:last-child {
+  font-style: italic;
+  margin-bottom: 0; /*The last list item should not have any space thats why we used this*/
+  /*When we write 0 we dont specify the unit*/
+}
+
+/* To target the specific child */
+/* li:nth-child(2) {
+  color: red;
+} */
+
+/* li:nth-child(odd) {
+  color: red;
+} */
+
+/*This will not work because what we are thinking is that it will select the first p child of article but thats not like that----- it is like if article has first child as p ----> NO there fore it will not select Thats why the below selector will not work*/
+article p:first-child {
+  color: red;
+} /* This is the common misconception*/
+
+/* This will work because the last child of article element is actually a p tag */
+
+/* article p:last-child {
+  color: red;
+} */
+
+/*styling links*/
+/*  */
+a {
+  color: #059db7;
+  text-decoration: none;
+}
+/* a:link{
+    color:red;
+} */
+
+a:visited {
+  color: #059db7;
+}
+
+a:hover {
+  color: orangered;
+  font-weight: bold;
+  text-decoration: underline dotted orangered;
+}
+
+/* when we do actually click on the link then it will be active pseudo class */
+a:active {
+  background: black;
+  font-style: italic;
+}
+nav a:link {
+  margin-right: 10px;
+  display: inline-block;
+}
+
+/* For styling links these four states/pseudo classes are always define in the above order ie link---visited---hover---active   (LVHA) */
+
+/* Resolving Conflicts in selectors */
+/* For rules refer the theory lectures pdf */
+/* .copyright {
+  color: red;
+}
+.text {
+  color: pink;
+}
+#copyright {
+  color: black;
+}
+
+footer p {
+  color: greenyellow !important ;
+} */
+
+/* ===================================== */
+
+/*It is very common to size the image in CSS and not in HTML*/
+.post-img {
+  width: 100%; /*This value will override the html given value*/
+  /*value in % will be wrt parent container*/
+  height: auto; /**/
+}
+h2::after {
+  content: "TOP";
+  background-color: #ffe70e;
+  color: #000;
+  font-size: 20px;
+  display: inline-block;
+  padding: 5px 5px;
+  position: absolute;
+  top: -30px;
+  right: 10px;
+}
+
+/* FLEXBOX */
+.main-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.author-box {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.author {
+  margin-bottom: 0;
+  margin-left: 15px;
+}
+
+.related-post {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+.related-author {
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: normal;
+  font-style: italic;
+}
+.related-link:link {
+  font-size: 17px;
+  font-weight: bold;
+  font-style: normal;
+  display: block;
+  margin-bottom: 10px;
+}
+/* .row {
+  display: flex;
+  gap: 75px;
+  margin-bottom: 60px;
+  align-items: flex-start;
+}
+
+article {
+  flex: 0 0 570px;
+  margin-bottom: 0;
+}
+
+aside {
+  flex: 0 0 300px;
+} */
+
+/* CSS grid */
+.container {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  column-gap: 75px;
+  row-gap: 60px;
+  align-items: start;
+}
+.main-header {
+  grid-column: 1/-1;
+  /* margin-bottom: none; */
+}
+
+article {
+}
+
+aside {
+}
+
+footer {
+  background-color: #1098ad;
+  grid-column: 1/-1;
+}
